@@ -1,0 +1,1105 @@
+
+/* 初始化 */ 
+body,p,a,h1,h2,h3,h4,h5,h6,ul,li{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: normal;
+	font-family: 'microsoft yahei',arial;
+}
+body{
+	width: 100%;
+	height: 100%;
+	background: #fffbf0;
+	overflow: hidden;
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+}
+.clearfix:after{
+	content: '';
+	display: block;
+	height: 0;
+	width: 100%;
+	visibility: hidden;
+	overflow: hidden;
+	font-size: 0;
+}
+.icon{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(../img/sprit.png) no-repeat;
+	background-size: 1006px 984px;
+}
+
+/*对话框*/
+.talkBar{
+	display: none;
+	z-index: 100;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,251,240,.5);
+}
+.talkBox{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 450px;
+	height: 480px;
+	background: #fffbf0;
+	border: 1px solid #808080;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+}
+.close{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 36px;
+	color: #808080;
+}
+.talkBox h3{
+	padding: 0 60px 0 18px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+	border-bottom: 1px solid #808080;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+}
+.talkRoom{
+	padding: 24px;
+}
+.intro{
+	margin-bottom: 12px;
+}
+.iconIntro{
+	margin-left: 12px;
+	width: 40px;
+	height: 40px;
+	background-position: -727px -379px;
+}
+.introText{
+	display: block;
+	margin-left: 5px;
+}
+.movePath{
+	padding: 8px 10px;
+	height: 21px;
+	line-height: 20px;
+	color: #666;
+	border: 1px solid #808080;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+}
+.movePlace{
+	position: relative;
+	height: 202px;
+	border: 1px solid #808080;
+	border-top: 0;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+}
+.placeInner{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+/*自定义滚动条*/
+.placeInner::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(200, 200, 200, 0.3);
+    background-color: #F5F5F5;
+}
+.placeInner::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ddd;
+}
+.placeInner::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+.placeInner a{
+	display: block;
+	padding: 3px 15px 3px 1px;
+	height: 18px;
+	line-height: 18px;
+	color: #020202;
+	overflow: hidden;
+}
+.placeInner a.active{
+	background: rgba(201,221,34,.5);
+}
+.placeInner a:hover{
+	background: rgba(201,221,34,.5);
+}
+.placeInner a span{
+	display: inline-block;
+	vertical-align: top;
+}
+.more{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/addSprit.png) 0 0 no-repeat;
+	background-size: 311px 282px;
+	background-position: -295px -85px;
+}
+.active .more{
+	background-position: -295px -34px;
+}
+.iconFolders{
+	display: inline-block;
+	width: 20px;
+	height: 18px;
+	background: url(../img/addSprit.png) 0 0 no-repeat;
+	background-size: 311px 282px;
+	background-position: -270px -213px;
+}
+.confirm{
+	padding: 0 24px 15px 10px;
+	height: 36px;
+}
+.reminder{
+	float: left;
+	display: none;
+	height: 36px;
+	width: 240px;
+	line-height: 36px;
+	font-size: 14px;
+}
+.confirm a{
+	float: right;
+	margin: 0 5px;
+	padding: 0 18px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 16px;
+	border: 1px solid transparent;
+	border-radius: 36px;
+}
+a.talkConfirm{
+	color: white;
+	background: #3d3b4f;
+}
+a.talkConcel{
+	color: #312520;
+	border-color: #312520;
+}
+.reminder{
+	color: #9d2933;
+}
+
+
+/* 头部导航 */ 
+#head{
+	position: relative;
+	width: 100%;
+	min-width: 1000px;
+	height: 60px;
+	border-bottom: 1px solid #808080;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+}
+#headBanner{
+	width: 100%;
+	height: 36px;
+	padding: 12px 0;
+	background: #c2ccd0;
+}
+#headBanner>div{
+	float: left;
+}
+/* logo */ 
+.logo{
+	width: 100px;
+	height: 36px;
+	margin-left: 50px;
+	background: url(../img/logo.png) 0 0 no-repeat;
+}
+.logo a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+/* 文件管理 */ 
+.manager{
+	position: relative;
+	width: 34px;
+	height: 34px;
+	margin-left: 90px;
+	border: 1px solid #808080;
+	border-radius: 35px;
+	background: white;
+	cursor: pointer;
+}
+.manager > a{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 24px;
+	height: 24px;
+	background-position: -777px -518px;
+}
+/* 搜索 */ 
+.search{
+	margin-left: 22px;
+	padding: 9px 13px;
+	width: 130px;
+	height: 18px;
+	background: white;
+	border-radius: 36px;
+	border: 1px solid #808080;
+	cursor: pointer;
+}
+.searchImg,.clear{
+	float: left;
+	width: 18px;
+	height: 18px;
+}
+.searchImg{
+	background-position: -386px -874px;
+}
+.clear{
+	background-position: -975px -226px;
+}
+.searchBar{
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 94px;
+	height: 18px;
+	border: 0;
+	outline: 0;
+	text-indent: 5px;
+	background: none;
+}
+/*导航右部分*/
+#headBanner .headRight{
+	float: right;
+	margin-right: 40px;
+	width: 40%;
+	height: 36px;
+}
+/* 视图 */
+.view{
+	float: left;
+	width: 95px;
+	height: 34px;
+	border: 1px solid #808080;
+	background: white;
+	border-radius: 36px;
+	overflow: hidden;
+}
+.view a{
+	float: left;
+	padding: 5px 0;
+	width: 47px;
+	height: 24px;
+	text-align: center;
+}
+.listView{
+	border-right: 1px solid #808080;
+}
+.listView span{
+	background-position: -458px -871px;
+}
+.imgView span{
+	background-position: -483px -871px;
+}
+.view a.active{
+	background: #75878a;
+}
+/*排序*/
+.order{
+	float: left;
+	margin-left: 5%;
+	width: 95px;
+	height: 34px;
+	border: 1px solid #808080;
+	background: white;
+	border-radius: 36px;
+	overflow: hidden;
+}
+.order a{
+	float: left;
+	padding: 5px 0;
+	width: 47px;
+	height: 24px;
+	text-align: center;
+}
+.timeOrder{
+	border-right: 1px solid #808080;
+}
+.timeOrder span{
+	background-position: -533px -871px;
+}
+.letterOrder span{
+	background-position: -508px -871px;
+}
+.order a.active{
+	background: #75878a;
+}
+/*添加*/
+.add{
+	position: relative;
+	float: right;
+	width: 145px;
+	height: 36px;
+}
+.addBtn{
+	padding: 5px 0;
+	width: 100%;
+	height: 24px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	background: #2e4e7e;
+	border-radius: 36px;
+}
+.addBtn:hover{
+	background: #003371;
+}
+.imgAdd{
+	background-position: -933px -871px;
+}
+.txtAdd{
+	display: inline-block;
+	height: 24px;
+	vertical-align: top;
+	line-height: 24px;
+}
+.addList{
+	z-index: 10;
+	display: none;
+	position: absolute;
+	right: -30px;
+	top: 35px;
+	width: 320px;
+	height: 281px;
+	opacity: 0;
+	overflow: hidden;
+	transform: translate3d(0,-20px,0);
+	transition: .3s;
+}
+.tri{
+	position: absolute;
+	top: 6px;
+	right: 100px;
+	width: 0;
+	height: 0;
+	border: 7px solid transparent;
+	border-top: 0;
+	border-bottom: 7px solid #808080;
+}
+.tri .tri{
+	top: 2px;
+	right: -7px;
+	border-bottom: 7px solid #fffbf0;
+}
+.addBox{
+	margin-top: 13px;
+	width: 318px;
+	height: 266px;
+	border: 1px solid #808080;
+	box-shadow: 0 0 1px #808080;
+	background: #fffbf0;
+}
+.addItem{
+	float: left;
+	padding: 29px 0 20px;
+	width: 33%;
+	height: 84px;
+	text-align: center;
+}
+.addItem:hover{
+	background: #c0ebd7;
+}
+.addItem span{
+	width: 50px;
+	height: 50px;
+	background-image: url(../img/addSprit.png);
+	background-size: 311px 282px;
+}
+#uploadFile span{
+	background-position: -168px -102px;
+}
+#uploadFolder span{
+	background-position: -219px -102px;
+}
+#download span{
+	background-position: -168px 0;
+}
+#createFolder span{
+	background-position: -107px -173px;
+}
+#addNote span{
+	background-position: -219px 0;
+}
+.addItem p{
+	margin-top: 13px;
+}
+/*信息条*/
+#messageBar{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 36px;
+	padding: 12px 0;
+	background: #2e4e7e;
+}
+.messageBar > div{
+	float: left;
+	height: 36px;
+}
+/*logo*/
+.messageBar .logo a{
+	width: 92px;
+	height: 31px;
+	background-position: -912px -312px;
+	background-color: #2e4e7e;
+}
+/*取消选择*/
+.cancelSelect{
+	margin-left: 94px;
+	width: 86px;
+}
+.cancelSelect a{
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	color: white;
+}
+.cancelSelect a:hover{
+	text-decoration: underline;
+}
+/*选择数目*/
+.numSelected{
+	margin-left: 20%;
+	line-height: 36px;
+	font-size: 24px;
+	color: white;
+}
+.numSelected span{
+	display: inline-block;
+}
+/*右工具栏*/
+.toolBar{
+	position: absolute;
+	right: 50px;
+}
+.toolBar div{
+	float: left;
+	margin-left: 34px;
+	padding: 9px 0;
+	height: 18px;
+	cursor: pointer;
+}
+#commonBar,#allBar,#recycleBar{
+	margin: 0;
+	padding: 0;
+	height: 36px;
+	cursor: default;
+}
+.toolBar .toolBarTxt{
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	color: white;
+	vertical-align: top;
+}
+.toolBar .icon{
+	margin-right: 6px;
+	width: 18px;
+	height: 18px;
+}
+#recycleBar{
+	display: none;
+}
+.imgDownloads{
+	background-position: 0 -947px;
+}
+.active .imgDownloads{
+	background-position: 0 -947px;
+}
+.imgMoveto{
+	background-position: -76px -947px;
+}
+.active .imgMoveto{
+	background-position: -76px -947px;
+}
+.imgRenames{
+	background-position: -114px -947px;
+}
+.active .imgRenames{
+	background-position: -114px -947px;
+}
+.imgRemoves{
+	background-position: -38px -947px;
+}
+.active .imgRemoves{
+	background-position: -38px -947px;
+}
+.imgRevert{
+	background-position: -228px -947px;
+}
+.active .imgRevert{
+	background-position: -228px -947px;
+}
+.imgRemovesForever{
+	background-position: -836px -947px;
+}
+.active .imgRemovesForever{
+	background-position: -836px -947px;
+}
+
+
+
+/*主体*/
+/*左边导航*/
+#left{
+	position: absolute;
+	top: 61px;
+	bottom: 0;
+	width: 199px;
+	border-right: 1px solid #808080;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+}
+/*用户*/
+.imgUser{
+	margin: 10px 50px 0;
+	padding: 18px;
+	width: 58px;
+	height: 58px;
+	background-position: -912px -95px;
+}
+.imgUser img{
+	display: block;
+	width: 58px;
+	height: 58px;
+	border-radius: 58px;
+}
+/*左边导航列表*/
+#leftBanner{
+	position: relative;
+	width: 100%;
+}
+.leftList{
+	position: relative;
+	width: 100%;
+}
+.menu{
+	width: 100%;
+	height: 100%;
+}
+.menu > div,.menu > ul{
+	width: 100%;
+}
+.menu .titleMenu{
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	text-indent: 70px;
+	color: #d3b17d;
+}
+.menu ul li{
+	width: 100%;
+	height: 32px;
+	cursor: pointer;
+}
+.menu ul li:hover{
+	background: #bbcdc5;
+}
+.menu span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.menu .current{
+	width: 4px;
+	height: 100%;
+}
+.menu .icon{
+	margin-left: 60px;
+}
+.menu .active{
+	background: #bbcdc5;
+}
+.menu .active .current{
+	background: #2e4e7e;
+}
+.menu .active .txtMenu{
+	color: #fcefe8;
+}
+.menu .recent{
+	margin: 7px 0;
+	width: 100%;
+	height: 32px;
+	cursor: pointer;
+}
+.menu .recent:hover{
+	background: #bbcdc5;
+}
+.imgRecent{
+	background-position: -533px -871px;
+}
+.active .imgRecent{
+	background-position: -533px -871px;
+}
+.all .imgAll{
+	background-position: -583px -871px;
+}
+.active .imgAll{
+	background-position: -608px -871px;
+}
+.text .imgText{
+	background-position: -633px -871px;
+}
+.active .imgText{
+	background-position: -633px -871px;
+}
+.pic .imgPic{
+	background-position: -683px -871px;
+}
+.active .imgPic{
+	background-position: -683px -871px;
+}
+.video .imgVideo{
+	background-position: -733px -871px;
+}
+.active .imgVideo{
+	background-position: -733px -871px;
+}
+.note .imgNote{
+	background-position: -783px -871px;
+}
+.active .imgNote{
+	background-position: -783px -871px;
+}
+.music .imgMusic{
+	background-position: -833px -871px;
+}
+.active .imgMusic{
+	background-position: -833px -871px;
+}
+.imgTime{
+	background-position: -883px -871px;
+}
+.active .imgTime{
+	background-position: -883px -871px;
+}
+.imgRecycle{
+	background-position: -675px -922px;
+}
+.active .imgRecycle{
+	background-position: -675px -922px;
+}
+.roller{
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	box-sizing: border-box;
+	width: 8px;
+	height: 100%;
+	border: 1px solid #808080;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #f3f9f1;
+}
+.rollerBlock{
+	position: absolute;
+	width: 100%;
+	height: 10px;
+	background: #75878a;
+}
+/*主显示区*/
+#right{
+	z-index: 0;
+	position: absolute;
+	left: 200px;
+	right: 0;
+	top: 61px;
+	bottom: 0;
+	padding: 22px 32px;
+}
+/*路径*/
+#path{
+	margin-bottom: 14px;
+}
+.paths{
+	margin-left: 44px;
+	border-left: 1px solid #808080;
+}
+.paths a{
+	display: inline-block;
+	margin: 0 10px;
+	height: 18px;
+	line-height: 18px;
+}
+.paths .current{
+	display: inline-block;
+	margin: 0 10px;
+	height: 18px;
+	line-height: 18px;
+}
+.selector{
+	display: none;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #808080;
+	outline: none;
+}
+.selector.active{
+	display: block;
+	border-color: #c9dd22;
+	border-width: 2px;
+	background: url(../img/sprit.png) no-repeat;
+	background-size: 1006px 984px;
+	background-position: -525px -922px;
+}
+.selector:hover{
+	border-color: #c9dd22;
+}
+#path .selector{
+	display: block;
+	width: 18px;
+	height: 18px;
+}
+#path .selector.active{
+	background-position: -380px -947px;
+}
+/*内容*/
+#content{
+	position: relative;
+}
+.inner{
+	position: relative;
+	border-top: 1px solid #808080;
+}
+/*框选框*/
+.square{
+	position: absolute;
+	width: 0;
+	height: 0;
+	background: rgba(201,221,34,.3);
+	border: 2px solid #c9dd22;
+}
+/*右键菜单*/
+.contextmenu{
+	display: none;
+	z-index: 10;
+	position: absolute;
+	padding: 15px 0;
+	width: 158px;
+	border: 1px solid #808080;
+	background: #fffbf0;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+	opacity: 0;
+	transform: translate3d(0,-20px,0);
+	transition: .3s;
+}
+.contextmenu li{
+	padding: 10px 30px;
+	height: 15px;
+	cursor: pointer;
+}
+.contextmenu li:hover{
+	background: #c9dd22;
+}
+.contextmenu li span{
+	display: inline-block;
+	height: 15px;
+	line-height: 15px;
+	vertical-align: top;
+}
+/*移动的数量*/
+.numMove{
+	/*z-index: 10;*/
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: white;
+	text-align: center;
+	vertical-align: top;
+	border-radius: 30px;
+	background: rgba(201,221,34,.8);
+}
+/*文件夹*/
+.folder{
+	float: left;
+	position: relative;
+	margin: 10px;
+	width: 194px;
+	height: 48px;
+	border: 1px solid #808080;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+	cursor: pointer;
+}
+.inner .icon{
+	position: absolute;
+}
+.inner .selector{
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-right: 0;
+	border-top: 0;
+}
+.folders .name{
+	position: absolute;
+	left: 55px;
+	top: 15px;
+}
+.folders input{
+	position: absolute;
+	left: 55px;
+	top: 15px;
+	display: none;
+	width: 110px;
+	background: none;
+	border: 0;
+	outline: 0;
+}
+.imgFolder{
+	left: 7px;
+	top: 4px;
+	width: 40px;
+	height: 40px;
+	background-position: -727px -379px;
+}
+/*其他*/
+.other{
+	float: left;
+	position: relative;
+	margin: 10px;
+	width: 196px;
+	height: 200px;
+	cursor: pointer;
+}
+.imgWrapper{
+	position: relative;
+	width: 194px;
+	height: 148px;
+	border: 1px solid #808080;
+	box-shadow: 0 4px 3px rgba(15,32,66,.05);
+}
+.imgOther{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 100px;
+	height: 100px;
+}
+.textWrapper{
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+.imgOtherSmall{
+	position: absolute;
+	left: 10px;
+	top: 16px;
+	width: 18px;
+	height: 18px;
+}
+.others .name{
+	position: absolute;
+	left: 36px;
+	top: 15px;
+}
+.others input{
+	position: absolute;
+	left: 36px;
+	top: 15px;
+	display: none;
+	width: 110px;
+	background: none;
+	border: 0;
+	outline: 0;
+}
+.tools,
+.time,
+.size{
+	display: none;
+}
+.imgText{
+	background-position: 0 -770px;
+}
+.imgTextSmall{
+	background-position: -323px -947px;
+}
+.imgPic{
+	background-position: -101px -770px;
+}
+.imgPicSmall{
+	background-position: -342px -947px;
+}
+.imgMusic{
+	background-position: 0 -669px;
+}
+.imgMusicSmall{
+	background-position: -133px -947px;
+}
+.imgVideo{
+	background-position: 0 -669px;
+}
+.imgVideoSmall{
+	background-position: -133px -947px;
+}
+
+/*listView下的视图*/
+.onListView:hover {
+	background: rgba(201,221,34,.5);
+}
+.onListView.folder,
+.onListView.other{
+	float: left;
+	position: relative;
+	margin: 0;
+	width: 100%;
+	min-width: 700px;
+	height: 48px;
+	border: 0;
+	border-bottom: 1px solid #808080;
+	box-shadow: none;
+	cursor: pointer;
+}
+.inner .onListView .icon{
+	position: absolute;
+	top: 4px;
+	left: 30px;
+	width: 40px;
+	height: 40px;
+}
+.inner .onListView .selector{
+	display: block;
+	position: absolute;
+	top: 15px;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #808080;
+}
+.inner .onListView .selector.active{
+	background-position: -380px -947px;
+}
+.onListView .name{
+	position: absolute;
+	left: 80px;
+	top: 15px;
+}
+.onListView input{
+	position: absolute;
+	left: 80px;
+	top: 15px;
+	display: none;
+	width: 110px;
+	background: none;
+	border: 0;
+	outline: 0;
+}
+.onListView .imgFolder{
+	background-position: -727px -379px;
+}
+/*其他*/
+.onListView .imgWrapper{
+	display: none;
+}
+.onListView  .textWrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.onListView .imgOtherSmall{
+	position: absolute;
+	left: 30px;
+	top: 4px;
+	width: 40px;
+	height: 40px;
+}
+.onListView .tools,
+.onListView .size,
+.onListView .time{
+	display: block;
+	position: absolute;
+	height: 100%;
+	color: #666;
+}
+.onListView .tools{
+	right: 220px;
+	width: 120px;
+	visibility: hidden;
+}
+.onListView .size{
+	right: 170px;
+	line-height: 48px;
+}
+.onListView .time{
+	right: 10px;
+	line-height: 48px;
+}
+.onListView .tools .tool{
+	position: relative;
+	top: 12px;
+	left: 0;
+	width: 24px;
+	height: 24px;
+}
+.onListView .tools span:nth-child(1){
+	background-position: -775px -922px;
+}
+.onListView .tools span:nth-child(2){
+	background-position: -825px -922px;
+}
+.onListView .tools span:nth-child(3){
+	background-position: -675px -922px;
+}
+.onListView .tools span:nth-child(4){
+	background-position: -780px -493px;
+}
+
+/*.imgText{
+	background-position: 0 -770px;
+}
+.imgTextSmall{
+	background-position: -323px -947px;
+}
+.imgPic{
+	background-position: -101px -770px;
+}
+.imgPicSmall{
+	background-position: -342px -947px;
+}
+.imgMusic{
+	background-position: 0 -669px;
+}
+.imgMusicSmall{
+	background-position: -133px -947px;
+}
+.imgVideo{
+	background-position: 0 -669px;
+}
+.imgVideoSmall{
+	background-position: -133px -947px;
+}*/

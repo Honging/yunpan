@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小小云-index</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/data.js"></script>
+</head>
+<body>
+	<!-- 移动到对话框 -->
+	<div id="talkBar" class="talkBar">
+		<div id="talkBox" class="talkBox">
+			<a id="talkClose" class="close" href="javascript:;">×</a>
+			<h3>选择存储位置</h3>
+			<div class="talkRoom">
+				<div class="intro">
+					<span class="icon iconIntro"></span>
+					<span id="introText" class="introText"></span>
+				</div>
+				<div class="movePath">
+					<span>移动到：</span>
+					<span id="movePaths" class="movePaths">小小云</span>
+				</div>
+				<div class="movePlace">
+					<div id="placeInner" class="placeInner">
+						<!-- <ul>
+							<li>
+								<a href="javascript:;">
+									<span class="more"></span>
+									<span class="iconFolders"></span>
+									<span>小小云</span>
+								</a>
+							</li>
+							<li>
+								<span class="more"></span>
+								<span class="icon iconFolders"></span>
+								<span>小小云</span>
+							</li>
+							<li>
+								<span class="more"></span>
+								<span class="icon iconFolders"></span>
+								<span>小小云</span>
+							</li>
+						</ul> -->
+					</div>
+				</div>
+			</div>
+			<div class="confirm">
+				<span id="movetoReminder" class="reminder">不能将文件移动到自身或其子文件夹下</span>
+				<a id="movetoConcel" class="talkConcel" href="javascript:;">取消</a>
+				<a id="movetoConfirm" class="talkConfirm" href="javascript:;">确认</a>
+			</div>
+		</div>
+	</div>
+	<!-- 头部导航 -->
+	<div id="head">
+		<!-- 头部工具条 -->
+		<div id="headBanner">
+			<!-- logo -->
+			<div id="logo" class="logo">
+				<a class="logoLink" href="#" target="_blank" title="小小云">
+					小小云
+				</a>
+			</div>
+			<!-- 文件管理 -->
+			<div id="manager" class="manager" title="文件管理">
+				<a class="icon" href="javascript:;"></a>
+			</div>
+			<!-- 搜索 -->
+			<div class="search">
+				<span class="icon searchImg"></span>
+				<input class="searchBar" type="text" placeholder="输入文件名">
+				<span class="icon clear"></span>
+			</div>
+			<div class="headRight">
+				<!-- 视图 -->
+				<div class="view" id="view">
+					<a class="listView" id="listView" href="javascript:;" title="列表视图"><span class="icon"></span></a>
+					<a class="imgView active" id="imgView" href="javascript:;" title="缩略图视图"><span class="icon"></span></a>
+				</div>
+				<!-- 排序 -->
+				<div class="order" id="order">
+					<a class="timeOrder" href="javascript:;" title="按时间排序"><span class="icon"></span></a>
+					<a class="letterOrder active" href="javascript:;" title="按字母排序"><span class="icon"></span></a>
+				</div>
+				<!-- 添加 -->
+				<div id="add" class="add">
+					<div id="addBtn" class="addBtn">
+						<span class="icon imgAdd"></span>
+						<span class="txtAdd">添加</span>
+					</div>
+					<div id="addList" class="addList">
+						<div class="tri"><div class="tri"></div></div>
+						<div class="addBox">
+							<div id="uploadFile" class="addItem">
+								<span class="icon"></span>
+								<p>上传文件</p>
+							</div>
+							<div id="uploadFolder" class="addItem">
+								<span class="icon"></span>
+								<p>上传文件夹</p>
+							</div>
+							<div id="download" class="addItem">
+								<span class="icon"></span>
+								<p>离线下载</p>
+							</div>
+							<div id="createFolder" class="addItem">
+								<span class="icon"></span>
+								<p>创建文件夹</p>
+							</div>
+							<div id="addNote" class="addItem">
+								<span class="icon"></span>
+								<p>添加笔记</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 信息条 -->
+		<div id="messageBar" class="messageBar">
+			<!-- logo -->
+			<div id="logo" class="logo">
+				<a class="icon logoLink" href="#" target="_blank" title="小小云">
+					小小云
+				</a>
+			</div>
+			<!-- 取消选择 -->
+			<div class="cancelSelect">
+				<a id="cancelSelectBtn" href="javascript:;">取消选择</a>
+			</div>
+			<!-- 选择数目 -->
+			<div id="numSelected" class="numSelected">
+				<span>选择了<span id="number" class="number">1</span>项</span>
+			</div>
+			<!-- 右工具栏 -->
+			<div class="toolBar clearfix">
+				<div id="commonBar">
+					<div id="allBar">
+						<!-- 下载 -->
+						<div id="" class="downloads">
+							<span class="icon imgDownloads"></span>
+							<span class="toolBarTxt">下载</span>
+						</div>
+						<!-- 移动到 -->
+						<div id="moveto" class="moveto">
+							<span class="icon imgMoveto"></span>
+							<span class="toolBarTxt">移动到</span>
+						</div>
+						<!-- 重命名 -->
+						<div id="renames" class="renames">
+							<span class="icon imgRenames"></span>
+							<span class="toolBarTxt">重命名</span>
+						</div>	
+					</div>
+					<!-- 删除 -->
+					<div id="removes" class="removes">
+						<span class="icon imgRemoves"></span>
+						<span class="toolBarTxt">删除</span>
+					</div>	
+				</div>
+				<div id="recycleBar">
+					<!-- 还原 -->
+					<div id="revert" class="revert">
+						<span class="icon imgRevert"></span>
+						<span class="toolBarTxt">还原</span>
+					</div>
+					<!-- 永久删除 -->
+					<div id="removesForever" class="removesForever">
+						<span class="icon imgRemovesForever"></span>
+						<span class="toolBarTxt">删除</span>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 主体 -->
+	<div id="main">
+		<!-- 左边导航 -->
+		<div id="left">
+			<!-- 用户 -->
+			<div id="user">
+				<div class="icon imgUser">
+					<img src="img/user.jpg" alt="用户头像">
+				</div>
+				<div class="userDetail"></div>
+			</div>
+			<!-- 左边导航列表 -->
+			<div id="leftBanner">
+				<div class="leftList" id="leftList">
+					<div id="menu" class="menu">
+						<div class="vip"></div>
+						<ul>
+							<li class="recent">
+								<span class="current"></span>
+								<span class="icon imgRecent"></span>
+								<span class="txtMenu">最近</span>
+							</li>
+						</ul>
+						<div class="titleMenu">文件</div>
+						<ul>
+							<li id="all" class="all active">
+								<span class="current"></span>
+								<span class="icon imgAll"></span>
+								<span class="txtMenu">全部</span>
+							</li>
+							<li id="text" class="text">
+								<span class="current"></span>
+								<span class="icon imgText"></span>
+								<span class="txtMenu">文档</span>
+							</li>
+							<li id="pic" class="pic">
+								<span class="current"></span>
+								<span class="icon imgPic"></span>
+								<span class="txtMenu">图片</span>
+							</li>
+							<li id="video" class="video">
+								<span class="current"></span>
+								<span class="icon imgVideo"></span>
+								<span class="txtMenu">视频</span>
+							</li>
+							<li id="note" class="note">
+								<span class="current"></span>
+								<span class="icon imgNote"></span>
+								<span class="txtMenu">笔记</span>
+							</li>
+							<li id="music" class="music">
+								<span class="current"></span>
+								<span class="icon imgMusic"></span>
+								<span class="txtMenu">音乐</span>
+							</li>
+						</ul>
+						<div class="titleMenu">照片</div>
+						<ul>
+							<li id="time" class="time">
+								<span class="current"></span>
+								<span class="icon imgTime"></span>
+								<span class="txtMenu">时间</span>
+							</li>
+						</ul>
+						<div class="titleMenu">我的</div>
+						<ul>
+							<li id="recycle" class="recycle">
+								<span class="current"></span>
+								<span class="icon imgRecycle"></span>
+								<span class="txtMenu">回收站</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="roller">
+					<div class="rollerBlock"></div>
+				</div>
+			</div>
+		</div>
+		<!-- 主显示区 -->
+		<div id="right">
+			<!-- 路径 -->
+			<div id="path">
+				<span id="selectorAll" class="selector"></span>
+				<div id="paths" class="paths">
+<a href="javascript:;">小小云</a>
+<span class="imgDir">></span>
+<span class="current">云云</span>
+				</div>
+			</div>
+			<!-- 内容 -->
+			<div id="content">
+				<div class="inner" id="inner">
+					<div id="contextmenu" class="contextmenu">
+						<ul>
+							<li id="down"><span>下载</span></li>
+							<li id="remove"><span>删除</span></li>
+							<li id="move"><span>移动到</span></li>
+							<li id="rename"><span>重命名</span></li>
+						</ul>
+					</div>
+					<!-- 文件夹 -->
+					<div id="folders" class="folders clearfix">
+<div class="onListView folder">
+	<span class="icon imgFolder"></span>
+	<span class="name">666</span>
+	<input type="text">
+	<span class="selector"></span>
+	<div class="tools">
+		<span class="tool icon" title="下载"></span>
+		<span class="tool icon" title="移动到"></span>
+		<span class="tool icon" title="删除"></span>
+		<span class="tool icon" title="重命名"></span>
+	</div>
+	<span class="size">5.4K</span>
+	<span class="time">2017-02-23 20:10</span>
+</div>
+<div class="onListView folder">
+	<span class="icon imgFolder"></span>
+	<span class="name">666</span>
+	<input type="text">
+	<span class="selector"></span>
+</div>
+					</div>
+					<!-- 其他 -->
+					<div id="others" class="others clearfix">
+<div class="onListView other">
+	<div class="imgWrapper">
+		<span class="icon imgOther imgTxt"></span>
+	</div>
+	<div class="textWrapper">
+		<span class="icon imgOtherSmall imgTxtSmall"></span>
+		<span class="name">333</span>
+		<input type="text">
+	</div>
+	<span class="selector"></span>
+</div>
+<div class="onListView other">
+	<div class="imgWrapper">
+		<span class="icon imgOther imgPic"></span>
+	</div>
+	<div class="textWrapper">
+		<span class="icon imgOtherSmall imgPicSmall"></span>
+		<span class="name">333</span>
+		<input type="text">
+		<div class="tools">
+		<span class="tool icon" title="下载"></span>
+		<span class="tool icon" title="移动到"></span>
+		<span class="tool icon" title="删除"></span>
+		<span class="tool icon" title="重命名"></span>
+	</div>
+	<span class="size">5.4K</span>
+	<span class="time">2017-02-23 20:10</span>
+	</div>
+	<span class="selector"></span>
+</div>
+					</div>
+				</div>
+				<div class="roller">
+					<div class="rollerBlock"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src='js/index.js'></script>
+</body>
+</html>
